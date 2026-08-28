@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Amiri, Cairo } from 'next/font/google'
 import './globals.css'
+import { FullscreenTrigger } from '@/components/fullscreen-trigger'
 
 const amiri = Amiri({
   subsets: ['arabic'],
@@ -18,9 +19,18 @@ const cairo = Cairo({
 })
 
 export const metadata: Metadata = {
-  title: 'أيمن و إيناس — ١٢ أوت ٢٠٢٦',
-  description: 'يسرّنا دعوتكم للاحتفال بزفاف أيمن وإيناس يوم ١٢ أوت ٢٠٢٦.',
+  title: 'أيمن و إيناس — دعوة زفاف',
+  description: 'يسرّنا دعوتكم للاحتفال بزفاف أيمن وإيناس يوم 3 أكتوبر 2026.',
   generator: 'v0.app',
+  manifest: '/manifest.json',
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: 'black-translucent',
+    title: 'دعوة زفاف',
+  },
+  other: {
+    'mobile-web-app-capable': 'yes',
+  },
   icons: {
     icon: [
       {
@@ -55,6 +65,7 @@ export default function RootLayout({
     <html lang="ar" dir="rtl" className={`${amiri.variable} ${cairo.variable} bg-background`}>
       <body className="font-sans antialiased">
         {children}
+        <FullscreenTrigger />
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

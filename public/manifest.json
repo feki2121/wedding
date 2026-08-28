@@ -1,0 +1,15 @@
+﻿{
+  "name": "أيمن و إيناس — دعوة زفاف",
+  "short_name": "دعوة زفاف",
+  "description": "يسرّنا دعوتكم للاحتفال بزفاف أيمن وإيناس",
+  "start_url": "/",
+  "scope": "/",
+  "display": "fullscreen",
+  "orientation": "portrait",
+  "background_color": "#f2ecdf",
+  "theme_color": "#f2ecdf",
+  "icons": [
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" },
+    { "src": "/apple-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}
