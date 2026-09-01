@@ -36,17 +36,18 @@ export default function Page() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={isOpened ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ duration: 0.9, delay: isOpened ? 0.25 : 0, ease: [0.22, 1, 0.36, 1] }}
-      >
-        <InvitationMessage />
-      </motion.div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={isOpened ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
         transition={{ duration: 0.9, delay: isOpened ? 1.0 : 0, ease: [0.22, 1, 0.36, 1] }}
       >
         <CoupleIntro />
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isOpened ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.9, delay: isOpened ? 0.25 : 0, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <InvitationMessage />
+        </motion.div>
+
         <DateVenue />
         <Countdown />
         <PhotoGallery />
