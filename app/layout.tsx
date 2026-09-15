@@ -19,13 +19,11 @@ const cairo = Cairo({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://invitation-mariage-chi.vercel.app'),  // ← AJOUTER CECI
+
   title: 'أيمن و إيناس — دعوة زفاف',
-
-  description:
-    'يسرّنا دعوتكم للاحتفال بزفاف أيمن وإيناس يوم 3 أكتوبر 2026.',
-
+  description: 'يسرّنا دعوتكم للاحتفال بزفاف أيمن وإيناس يوم 3 أكتوبر 2026.',
   generator: 'v0.app',
-
   manifest: '/manifest.json',
 
   appleWebApp: {
@@ -38,30 +36,21 @@ export const metadata: Metadata = {
     'mobile-web-app-capable': 'yes',
   },
 
-  // Favicon et icône mobile
   icons: {
-    icon: '/apple-icon.png',
-    apple: '/apple-icon.png',
+    icon: '/wedding-envelope.png',
+    apple: '/wedding-envelope.png',
   },
 
-  // Aperçu lors du partage sur WhatsApp, Facebook, Messenger, etc.
   openGraph: {
     title: 'أيمن و إيناس — دعوة زفاف',
-
-    description:
-      'يسرّنا دعوتكم للاحتفال بزفاف أيمن وإيناس يوم 3 أكتوبر 2026.',
-
+    description: 'يسرّنا دعوتكم للاحتفال بزفاف أيمن وإيناس يوم 3 أكتوبر 2026.',
     url: 'https://invitation-mariage-chi.vercel.app',
-
     siteName: 'دعوة زفاف أيمن و إيناس',
-
     locale: 'ar_TN',
-
     type: 'website',
-
     images: [
       {
-        url: '/apple-icon.png',
+        url: '/wedding-envelope.png',   // ← grâce à metadataBase, devient absolu automatiquement
         width: 1200,
         height: 630,
         alt: 'دعوة زفاف أيمن و إيناس',
@@ -69,16 +58,11 @@ export const metadata: Metadata = {
     ],
   },
 
-  // Aperçu pour Twitter / X
   twitter: {
     card: 'summary_large_image',
-
     title: 'أيمن و إيناس — دعوة زفاف',
-
-    description:
-      'يسرّنا دعوتكم للاحتفال بزفاف أيمن وإيناس يوم 3 أكتوبر 2026666.',
-
-    images: ['/apple-icon.png'],
+    description: 'يسرّنا دعوتكم للاحتفال بزفاف أيمن وإيناس يوم 3 أكتوبر 2026.',  // ← CORRIGÉ (2026666 → 2026)
+    images: ['/wedding-envelope.png'],
   },
 }
 
