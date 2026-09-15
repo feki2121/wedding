@@ -40,8 +40,8 @@ export const metadata: Metadata = {
 
   // Favicon et icône mobile
   icons: {
-    icon: '/apple-icon.png',
-    apple: '/apple-icon.png',
+    icon: '/wedding-envelope.png',
+    apple: '/wedding-envelope.png',
   },
 
   // Aperçu lors du partage sur WhatsApp, Facebook, Messenger, etc.
@@ -61,7 +61,7 @@ export const metadata: Metadata = {
 
     images: [
       {
-        url: '/apple-icon.png',
+        url: '/wedding-envelope.png',
         width: 1200,
         height: 630,
         alt: 'دعوة زفاف أيمن و إيناس',
@@ -78,7 +78,7 @@ export const metadata: Metadata = {
     description:
       'يسرّنا دعوتكم للاحتفال بزفاف أيمن وإيناس يوم 3 أكتوبر 2026666.',
 
-    images: ['/apple-icon.png'],
+    images: ['/wedding-envelope.png'],
   },
 }
 
