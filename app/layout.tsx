@@ -20,33 +20,65 @@ const cairo = Cairo({
 
 export const metadata: Metadata = {
   title: 'أيمن و إيناس — دعوة زفاف',
-  description: 'يسرّنا دعوتكم للاحتفال بزفاف أيمن وإيناس يوم 3 أكتوبر 2026.',
+
+  description:
+    'يسرّنا دعوتكم للاحتفال بزفاف أيمن وإيناس يوم 3 أكتوبر 2026.',
+
   generator: 'v0.app',
+
   manifest: '/manifest.json',
+
   appleWebApp: {
     capable: true,
     statusBarStyle: 'black-translucent',
     title: 'دعوة زفاف',
   },
+
   other: {
     'mobile-web-app-capable': 'yes',
   },
+
+  // Favicon et icône mobile
   icons: {
-    icon: [
+    icon: '/wedding-envelope.png',
+    apple: '/wedding-envelope.png',
+  },
+
+  // Aperçu lors du partage sur WhatsApp, Facebook, Messenger, etc.
+  openGraph: {
+    title: 'أيمن و إيناس — دعوة زفاف',
+
+    description:
+      'يسرّنا دعوتكم للاحتفال بزفاف أيمن وإيناس يوم 3 أكتوبر 2026.',
+
+    url: 'https://invitation-mariage-chi.vercel.app',
+
+    siteName: 'دعوة زفاف أيمن و إيناس',
+
+    locale: 'ar_TN',
+
+    type: 'website',
+
+    images: [
       {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
+        url: '/wedding-envelope.png',
+        width: 1200,
+        height: 630,
+        alt: 'دعوة زفاف أيمن و إيناس',
       },
     ],
-    apple: '/apple-icon.png',
+  },
+
+  // Aperçu pour Twitter / X
+  twitter: {
+    card: 'summary_large_image',
+
+    title: 'أيمن و إيناس — دعوة زفاف',
+
+    description:
+      'يسرّنا دعوتكم للاحتفال بزفاف أيمن وإيناس يوم 3 أكتوبر 2026.',
+
+    images: ['/wedding-envelope.png'],
   },
 }
 
@@ -62,10 +94,16 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ar" dir="rtl" className={`${amiri.variable} ${cairo.variable} bg-background`}>
+    <html
+      lang="ar"
+      dir="rtl"
+      className={`${amiri.variable} ${cairo.variable} bg-background`}
+    >
       <body className="font-sans antialiased">
         {children}
+
         <FullscreenTrigger />
+
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>
     </html>

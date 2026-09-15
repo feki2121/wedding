@@ -100,10 +100,8 @@ export function EnvelopeGate({ onOpen }: { onOpen: () => void }) {
     setPhase("sealCrack")
   }
 
-  // ===== COULEURS PLUS FONCÉES =====
-  const paper = "oklch(0.91 0.028 38)"       // plus foncé
-  const paperDark = "oklch(0.86 0.035 38)"   // encore plus foncé pour les ombres
-  const emboss = "oklch(0.78 0.04 38)"       // motifs plus visibles
+  const paper = "oklch(0.91 0.028 38)"
+  const paperDark = "oklch(0.86 0.035 38)"
 
   return (
     <AnimatePresence>
@@ -248,16 +246,21 @@ export function EnvelopeGate({ onOpen }: { onOpen: () => void }) {
               <line x1="100%" y1="100%" x2="50%" y2={`${SEAL_Y}%`} stroke="oklch(0.78 0.025 38 / 40%)" strokeWidth="0.8" />
             </svg>
 
-            {/* Carte */}
-            <div className="absolute inset-x-0 pointer-events-none overflow-visible" style={{ top: "5%", bottom: 0, zIndex: 35 }}>
+            {/* ============================================================
+                CARTE — avec SCALE pour compenser le padding externe
+                On utilise transform: scale() pour réduire la carte
+                et la centrer parfaitement dans l'enveloppe.
+                ============================================================ */}
+            <div
+              className="absolute inset-0 flex items-center justify-center pointer-events-none"
+              style={{ zIndex: 35, overflow: "visible" }}
+            >
               <motion.div
-                className="absolute inset-x-0 flex justify-center px-5"
-                style={{ bottom: "11%" }}
-                initial={{ y: "135%", opacity: 0, scale: 0.94 }}
+                initial={{ y: "150%", opacity: 0, scale: 0.9 }}
                 animate={
                   isReveal
-                    ? { y: isFloating ? "-6%" : "0%", opacity: 1, scale: isFloating ? 1.015 : 1 }
-                    : { y: "135%", opacity: 0, scale: 0.94 }
+                    ? { y: isFloating ? "-3%" : "0%", opacity: 1, scale: isFloating ? 1.01 : 1 }
+                    : { y: "150%", opacity: 0, scale: 0.9 }
                 }
                 transition={{
                   y: {
@@ -267,8 +270,20 @@ export function EnvelopeGate({ onOpen }: { onOpen: () => void }) {
                   opacity: { duration: 0.5 },
                   scale: { duration: 0.6 },
                 }}
+                style={{ width: "100%", height: "100%", position: "relative" }}
               >
-                <div className="w-full max-w-[290px] shadow-[0_20px_40px_-10px_oklch(0.25_0.04_38_/_35%)]">
+                {/* Wrapper avec scale pour rentrer dans l'enveloppe */}
+                <div
+                  style={{
+                    position: "absolute",
+                    top: "50%",
+                    left: "50%",
+                    transform: "translate(-50%, -50%) scale(0.55)",
+                    transformOrigin: "center center",
+                    width: "340px",
+                    boxShadow: "0 20px 40px -10px oklch(0.25 0.04 38 / 35%)",
+                  }}
+                >
                   <InvitationMessage />
                 </div>
               </motion.div>
