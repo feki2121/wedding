@@ -8,7 +8,7 @@ export const wedding = {
   venueName: "قاعة شاهرازاد",
   venueAddress: "QPCJ+VJ8، C81، صفاقس، تونس",
   mapsQuery: "Salle Chahrazed, Sfax, Tunisie",
-  mapsEmbedQuery: "QPCJ+VJ8, C81, Sfax",
+  mapsEmbedQuery: "Chahrazed, QPCJ+VJ8, C81, Sfax",
   greeting: "بكل حب وسرور، يتشرف أيمن وإيناس وعائلتاهما بدعوتكم لمشاركتهما فرحة زفافهما.",
   welcomeMessage:
     "شكراً لكونكم جزءاً من قصتنا. حضوركم وحبكم ودعمكم هي أثمن هدية نتمنى أن تكون معنا في بداية هذا الفصل الجديد من حياتنا.",
