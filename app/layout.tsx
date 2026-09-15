@@ -36,10 +36,15 @@ export const metadata: Metadata = {
     'mobile-web-app-capable': 'yes',
   },
 
-  icons: {
-    icon: '/wedding-envelope.png',
-    apple: '/wedding-envelope.png',
-  },
+icons: {
+  icon: [
+    { url: '/wedding-envelope.png', sizes: 'any', type: 'image/png' },
+  ],
+  apple: [
+    { url: '/wedding-envelope.png', sizes: '180x180', type: 'image/png' },
+  ],
+  shortcut: '/wedding-envelope.png',
+},
 
   openGraph: {
     title: 'أيمن و إيناس — دعوة زفاف',
@@ -61,7 +66,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'أيمن و إيناس — دعوة زفاف',
-    description: 'يسرّنا دعوتكم للاحتفال بزفاف أيمن وإيناس يوم 3 أكتوبر 2026.',  // ← CORRIGÉ (2026666 → 2026)
+    description: 'يسرّنا دعوتكم للاحتفال بزفاف أيمن وإيناس يوم 3 أكتوبر 2026.',
     images: ['/wedding-envelope.png'],
   },
 }
