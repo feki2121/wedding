@@ -55,9 +55,11 @@ icons: {
     type: 'website',
     images: [
       {
-        url: '/wedding-envelope.png',   // ← grâce à metadataBase, devient absolu automatiquement
+        // URL absolue grâce à metadataBase — 1200×630 px, 114 KB, image/jpeg
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
+        type: 'image/jpeg',
         alt: 'دعوة زفاف أيمن و إيناس',
       },
     ],
@@ -67,7 +69,14 @@ icons: {
     card: 'summary_large_image',
     title: 'أيمن و إيناس — دعوة زفاف',
     description: 'يسرّنا دعوتكم للاحتفال بزفاف أيمن وإيناس يوم 3 أكتوبر 2026.',
-    images: ['/wedding-envelope.png'],
+    images: [
+      {
+        url: '/og-image.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'دعوة زفاف أيمن و إيناس',
+      },
+    ],
   },
 }
 
