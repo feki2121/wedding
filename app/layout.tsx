@@ -55,10 +55,10 @@ icons: {
     type: 'website',
     images: [
       {
-        // URL absolue grâce à metadataBase — 1200×630 px, 114 KB, image/jpeg
+        // URL absolue grâce à metadataBase — 1200×1200 px, 212 KB, image/jpeg
         url: '/og-image.jpg',
         width: 1200,
-        height: 630,
+        height: 1200,
         type: 'image/jpeg',
         alt: 'دعوة زفاف أيمن و إيناس',
       },
@@ -73,7 +73,7 @@ icons: {
       {
         url: '/og-image.jpg',
         width: 1200,
-        height: 630,
+        height: 1200,
         alt: 'دعوة زفاف أيمن و إيناس',
       },
     ],
